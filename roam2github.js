@@ -406,7 +406,7 @@ async function format_and_save(filetype, download_dir, graph_name) {
 
             if (filetype == 'Markdown') {
 
-                const markdown_dir = path.join(backup_dir, '_notes')
+                const markdown_dir = path.join(backup_dir, '_notes', graph_name)
 
                 // log('- Removing old markdown directory')
                 await fs.remove(markdown_dir, { recursive: true }) // necessary, to update renamed pages
