@@ -409,8 +409,10 @@ async function format_and_save(filetype, download_dir, graph_name) {
             if (files.length === 0) reject('Extraction error: extract_dir is empty')
 
             if (filetype == 'Markdown') {
-
-                const markdown_dir = path.join(backup_dir, 'markdown', graph_name)
+                //code modified by github.com/tharansakthi
+                const markdown_dir = path.join(backup_dir, '_notes')
+                //original code 
+                //const markdown_dir = path.join(backup_dir, 'markdown', graph_name)
 
                 // log('- Removing old markdown directory')
                 await fs.remove(markdown_dir, { recursive: true }) // necessary, to update renamed pages
